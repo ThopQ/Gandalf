@@ -1,0 +1,28 @@
+{
+	"name": "gandalf",
+	"version": "1.0.0",
+	"description": "Makes documenting your stuff a little less painful",
+	"main": "app.js",
+	"scripts": {
+		"start": "nodemon app.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ThopQ/Gandalf.git"
+	},
+	"author": "Dario Eng & Thomas Iseli",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/ThopQ/Gandalf/issues"
+	},
+	"homepage": "https://github.com/ThopQ/Gandalf#readme",
+	"dependencies": {
+		"express": "^4.17.1"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.7"
+	},
+	"nodemonConfig": {
+		"ext": "html"
+	}
+}
