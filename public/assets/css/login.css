@@ -1,0 +1,9 @@
+#login-container {
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+
+#login-form {
+	max-width: 20rem;
+}
