@@ -3,7 +3,7 @@ const router = express.Router();
 
 // middleware that is specific to this router
 router.use(function timeLog(req, res, next) {
-	console.log('customers.js' + __dirname);
+	console.log('time', Date.now());
 	next();
 });
 // define the home page route
