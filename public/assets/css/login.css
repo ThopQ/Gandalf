@@ -1,9 +1,13 @@
-#login-container {
+#login-area {
 	align-items: center;
 	justify-content: center;
 	height: 100vh;
 }
 
-#login-form {
-	max-width: 20rem;
+#login-container {
+	max-width: 25rem;
+	min-width: 13rem;
+	height: 20rem;
+	padding: 20px;
+	border: 1px solid black;
 }
