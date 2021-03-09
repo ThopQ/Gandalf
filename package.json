@@ -4,7 +4,8 @@
 	"description": "Makes documenting your stuff a little less painful",
 	"main": "app.js",
 	"scripts": {
-		"start": "node app.js"
+		"start": "node app.js",
+		"run dev": "nodemon app.js"
 	},
 	"repository": {
 		"type": "git",
@@ -20,5 +21,11 @@
 		"axios": "^0.21.1",
 		"express": "^4.17.1",
 		"open": "^8.0.2"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.7"
+	},
+	"nodemonConfig": {
+		"ext": "html"
 	}
 }
