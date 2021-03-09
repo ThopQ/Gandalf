@@ -4,8 +4,7 @@
 	"description": "Makes documenting your stuff a little less painful",
 	"main": "app.js",
 	"scripts": {
-		"start": "node app.js",
-		"run dev": "nodemon app.js"
+		"start": "nodemon app.js"
 	},
 	"repository": {
 		"type": "git",
