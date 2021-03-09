@@ -6,13 +6,18 @@ const customers = require('./routes/customers');
 const app = express();
 const port = 3000;
 
-app.engine('handlebars', exphbs({ extname: 'hbs', defaultLayout: 'app.hbs' }));
-app.set('view engine', 'hbs');
-
+app.engine(
+	'.hbs',
+	exphbs({
+		extname: 'hbs',
+		layoutsDir: `${__dirname}/views/layouts`,
+	})
+);
+app.set('view engine', '.hbs');
 app.use(express.static('public'));
 
 app.get('/', function (req, res) {
-	res.render('login');
+	res.render('login', { layout: 'auth.hbs' });
 });
 
 app.use('/customers', customers);
