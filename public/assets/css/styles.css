@@ -12,6 +12,9 @@ body {
 .justify-content-center {
 	justify-content: center;
 }
+.justify-content-end {
+	justify-content: flex-end;
+}
 .align-items-center {
 	align-items: center;
 }
@@ -20,4 +23,23 @@ body {
 }
 .flex-col {
 	flex-direction: column;
+}
+
+.h-100 {
+	min-height: 100vh;
+}
+
+.ml-4 {
+	margin-left: 4rem;
+}
+
+.mr-4 {
+	margin-right: 4rem;
+}
+
+.pa-1 {
+	padding: 1rem;
+}
+.pa-2 {
+	padding: 2rem;
 }
