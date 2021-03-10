@@ -10,10 +10,11 @@ app.engine(
 	'.hbs',
 	exphbs({
 		extname: 'hbs',
-		layoutsDir: `${__dirname}/views/layouts`,
+		layoutsDir: `${__dirname}/public/views/layouts`,
 	})
 );
 app.set('view engine', '.hbs');
+app.set('views', `${__dirname}/public/views`);
 app.use(express.static('public'));
 
 app.get('/', function (req, res) {
