@@ -8,7 +8,7 @@ router.use(function timeLog(req, res, next) {
 });
 // define the home page route
 router.get('/', function (req, res) {
-	res.send('Customers');
+	res.render('customers', { layout: 'app.hbs' });
 });
 
 module.exports = router;
