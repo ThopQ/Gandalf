@@ -1,7 +1,23 @@
-@import 'ui.css';
 @import 'login.css';
 @import 'customers.css';
 
 body {
+	height: 100%;
 	margin: 0;
+}
+
+.d-flex {
+	display: flex;
+}
+.justify-content-center {
+	justify-content: center;
+}
+.align-items-center {
+	align-items: center;
+}
+.flex-row {
+	flex-direction: row;
+}
+.flex-col {
+	flex-direction: column;
 }
