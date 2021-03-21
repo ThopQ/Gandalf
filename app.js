@@ -1,8 +1,10 @@
 const express = require('express');
+const db = require('diskdb');
 const exphbs = require('express-handlebars');
-const bodyParser = require('body-parser');
 const open = require('open');
 const customers = require('./routes/customers');
+
+db.connect('./data', ['customers']);
 
 const app = express();
 const port = 3000;
@@ -18,13 +20,8 @@ app.set('view engine', '.hbs');
 app.set('views', `${__dirname}/public/views`);
 app.use(express.static('public'));
 
-app.use(bodyParser.json()); // to support JSON-encoded bodies
-app.use(
-	bodyParser.urlencoded({
-		// to support URL-encoded bodies
-		extended: true,
-	})
-);
+app.use(express.json());
+app.use(express.urlencoded());
 
 app.post('/auth', function (req, res) {
 	let AuthUser = {
