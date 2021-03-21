@@ -6,7 +6,7 @@ class CustomerTable {
 			mockData: [
 				{
 					id: 1,
-					name: 'Thomas',
+					name: 'netivity GmbH',
 					clients: [
 						{ hostname: 'thomascln01', ipAddress: '192.168.1.21' },
 						{ hostname: 'thomascln02', ipAddress: '192.168.1.22' },
@@ -15,7 +15,7 @@ class CustomerTable {
 				},
 				{
 					id: 2,
-					name: 'Elisabeth',
+					name: 'TEKO Olten',
 					clients: [
 						{ hostname: 'lisicln01', ipAddress: '192.168.2.21' },
 						{ hostname: 'lisicln02', ipAddress: '192.168.2.22' },
@@ -23,7 +23,7 @@ class CustomerTable {
 				},
 				{
 					id: 3,
-					name: 'Reto',
+					name: 'redIT',
 					clients: [
 						{ hostname: 'retocln01', ipAddress: '192.168.3.21' },
 						{ hostname: 'retocln01', ipAddress: '192.168.3.22' },
