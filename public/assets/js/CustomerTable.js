@@ -66,9 +66,13 @@ class CustomerTable {
 	generateTableBody(item) {
 		let customerRow = document.createElement('tr');
 		let customerNameCol = document.createElement('td');
+		let customerLink = document.createElement('a');
 		let customerCounterCol = document.createElement('td');
 
-		customerNameCol.innerText = item.name;
+		customerLink.innerText = item.name;
+		customerLink.href = `/customers/${item.id}/computers`;
+
+		customerNameCol.appendChild(customerLink);
 		customerCounterCol.innerText = item.clients.length;
 
 		customerRow.append(customerNameCol, customerCounterCol);
