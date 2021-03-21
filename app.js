@@ -17,6 +17,10 @@ app.set('view engine', '.hbs');
 app.set('views', `${__dirname}/public/views`);
 app.use(express.static('public'));
 
+app.post('/auth', function (req, res) {
+	console.log(req.body);
+});
+
 app.get('/', function (req, res) {
 	res.render('login', { layout: 'auth.hbs' });
 });
