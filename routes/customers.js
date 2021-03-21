@@ -11,4 +11,11 @@ router.get('/:id/computers', function (req, res) {
 	res.send(`Test ID: ${req.params.id}`);
 });
 
+router.post('/', (req, res) => {
+	const item = req.body;
+
+	console.log('Adding new item: ', item);
+	db.customers.save(item);
+});
+
 module.exports = router;
