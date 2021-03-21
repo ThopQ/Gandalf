@@ -1,0 +1,48 @@
+<h1>Kundenliste</h1>
+<div id="add-customer-modal" class="modal">
+	<!-- Modal content -->
+	<div class="modal-content">
+		<span class="close">&times;</span>
+		<h2>Kunde hinzufügen</h2>
+
+		<label for="customer-name-input">Kundenname</label>
+		<input
+			type="text"
+			id="customer-name-input"
+			name="customer-name"
+			placeholder="netivity GmbH"
+			class="input"
+		/>
+		<div class="d-flex justify-content-end mt-1">
+			<button class="button">Speichern</button>
+		</div>
+	</div>
+</div>
+
+<main>
+	<div class="mt-5 mb-1 table-actions d-flex justify-content-end">
+		<button id="add-customer-btn" class="button">Kunde hinzufügen</button>
+	</div>
+	<div id="customer-table"></div>
+</main>
+<script src="./assets/js/CustomerTable.js"></script>
+
+<script>
+	let modal = document.getElementById('add-customer-modal');
+	let openBtn = document.getElementById('add-customer-btn');
+	let closeBtn = document.getElementsByClassName('close')[0];
+
+	openBtn.onclick = function () {
+		modal.style.display = 'block';
+	};
+
+	closeBtn.onclick = function () {
+		modal.style.display = 'none';
+	};
+
+	window.onclick = function (event) {
+		if (event.target == modal) {
+			modal.style.display = 'none';
+		}
+	};
+</script>

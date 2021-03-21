@@ -1,0 +1,27 @@
+<div class="h-100 d-flex justify-content-center align-items-center flex-row">
+	<form
+		action="/auth"
+		method="POST"
+		id="login-form"
+		class="d-flex flex-col ml-4 mr-4 pa-2"
+	>
+		<h2>Login</h2>
+		<label for="login-username">Benutzername:</label>
+		<input
+			type="text"
+			id="login-username"
+			name="username"
+			class="input"
+		/><br />
+		<label for="login-password">Passwort:</label>
+		<input
+			type="password"
+			id="login-password"
+			name="password"
+			class="input"
+		/><br />
+		<div class="d-flex justify-content-end">
+			<button type="submit" class="button">Login</button>
+		</div>
+	</form>
+</div>

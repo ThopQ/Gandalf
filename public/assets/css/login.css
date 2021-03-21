@@ -1,13 +1,15 @@
-#login-area {
-	align-items: center;
-	justify-content: center;
-	height: 100vh;
+#login-form {
+	height: 18rem;
+	width: 25rem;
+	flex: 0 1 auto;
+	border: 1px solid #aaaaaa;
+	border-radius: 5px;
 }
 
-#login-container {
-	max-width: 25rem;
-	min-width: 13rem;
-	height: 20rem;
-	padding: 20px;
-	border: 1px solid black;
+footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	padding-left: 5rem;
+	padding-bottom: 1rem;
 }

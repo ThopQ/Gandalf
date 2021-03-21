@@ -1,7 +1,132 @@
-@import 'ui.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
+
 @import 'login.css';
 @import 'customers.css';
 
 body {
+	height: 100%;
 	margin: 0;
+	font-family: 'Roboto', sans-serif;
+}
+
+.container {
+	margin-left: 3rem;
+	margin-right: 3rem;
+}
+
+.d-flex {
+	display: flex;
+}
+.justify-content-center {
+	justify-content: center;
+}
+.justify-content-end {
+	justify-content: flex-end;
+}
+.align-items-center {
+	align-items: center;
+}
+.flex-row {
+	flex-direction: row;
+}
+.flex-col {
+	flex-direction: column;
+}
+
+.h-100 {
+	min-height: 100vh;
+}
+
+.ml-4 {
+	margin-left: 4rem;
+}
+
+.mr-4 {
+	margin-right: 4rem;
+}
+
+.mt-1 {
+	margin-top: 1rem;
+}
+
+.mt-5 {
+	margin-top: 5rem;
+}
+
+.mb-1 {
+	margin-bottom: 1rem;
+}
+
+.pa-1 {
+	padding: 1rem;
+}
+.pa-2 {
+	padding: 2rem;
+}
+
+.button {
+	background-color: #fa233b; /* Green */
+	border-radius: 5px;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+	background-color: #fefefe;
+	margin: auto;
+	padding: 20px;
+	border: 1px solid #aaaaaa;
+	border-radius: 10px;
+	width: 50%;
+}
+
+/* The Close Button */
+.close {
+	color: #aaaaaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.input {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-sizing: border-box;
+}
+
+.link {
+	text-decoration: none;
+	font-weight: 700;
+	color: #fa233b;
 }
