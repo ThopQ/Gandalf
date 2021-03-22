@@ -2,6 +2,7 @@
 
 class CustomerTable {
 	constructor() {
+		// create state property on initializing with mockdata to populate table
 		this.state = {
 			mockData: [
 				{
@@ -32,11 +33,13 @@ class CustomerTable {
 			],
 		};
 
+		//run render function on class initialization
 		this.render();
 	}
 
 	render() {
 		this.generateTableHeader();
+		//empty tableBody everytime the function gets called
 		this.tableBody.innerHTML = '';
 
 		this.state.mockData.forEach((item) => {

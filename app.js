@@ -1,14 +1,22 @@
+//import express.js backend
 const express = require('express');
-const db = require('diskdb');
+
+//import express-handlebars template-engine
 const exphbs = require('express-handlebars');
+
+//import open to quick start browser
 const open = require('open');
+
+//import outsourced customers route
 const customers = require('./routes/customers');
 
-db.connect('./data', ['customers']);
-
+//initiate express as app
 const app = express();
+
+//port for express webserver
 const port = 3000;
 
+//use handlebars as default template engine and define path
 app.engine(
 	'.hbs',
 	exphbs({
@@ -17,12 +25,16 @@ app.engine(
 	})
 );
 app.set('view engine', '.hbs');
+
+//set up views directory inside public directory
 app.set('views', `${__dirname}/public/views`);
 app.use(express.static('public'));
 
+//used to handle http POST requests with json and form-data
 app.use(express.json());
 app.use(express.urlencoded());
 
+//checks credentials from login and redirects to customers on success
 app.post('/auth', function (req, res) {
 	let AuthUser = {
 		username: req.body.username,
@@ -39,13 +51,16 @@ app.post('/auth', function (req, res) {
 	}
 });
 
+//route for login-view
 app.get('/', function (req, res) {
 	res.render('login', { layout: 'auth.hbs' });
 });
 
+//use outsourced customers route
 app.use('/customers', customers);
 
+//listen to connection on port 3000
 app.listen(port, () => {
 	console.log(`Gandalf is live at http://localhost:${port}, baby!`);
-	//open('http://localhost:3000');
+	open('http://localhost:3000');
 });
