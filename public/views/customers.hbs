@@ -4,18 +4,19 @@
 	<div class="modal-content">
 		<span class="close">&times;</span>
 		<h2>Kunde hinzufügen</h2>
-
-		<label for="customer-name-input">Kundenname</label>
-		<input
-			type="text"
-			id="customer-name-input"
-			name="customer-name"
-			placeholder="netivity GmbH"
-			class="input"
-		/>
-		<div class="d-flex justify-content-end mt-1">
-			<button class="button">Speichern</button>
-		</div>
+		<form>
+			<label for="customer-name-input">Kundenname</label>
+			<input
+				type="text"
+				id="customer-name-input"
+				name="customer-name"
+				placeholder="netivity GmbH"
+				class="input"
+			/>
+			<div class="d-flex justify-content-end mt-1">
+				<button id="create-customer-btn" class="button">Speichern</button>
+			</div>
+		</form>
 	</div>
 </div>
 
@@ -45,4 +46,11 @@
 			modal.style.display = 'none';
 		}
 	};
+</script>
+
+<script>
+	let newCustomerName = document.getElementById('customer-name-input').value;
+	let createCustomerBtn = document.getElementById('create-customer-btn');
+
+	k;
 </script>

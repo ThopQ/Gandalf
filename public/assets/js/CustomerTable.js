@@ -2,6 +2,9 @@
 
 class CustomerTable {
 	constructor() {
+		//el property references div-element in html
+		this.el = document.getElementById('customer-table');
+
 		// create state property on initializing with mockdata to populate table
 		this.state = {
 			mockData: [
@@ -48,7 +51,6 @@ class CustomerTable {
 	}
 
 	generateTableHeader() {
-		this.el = document.getElementById('customer-table');
 		this.table = document.createElement('table');
 		this.tableHeader = document.createElement('thead');
 		this.tableHeadRow = document.createElement('tr');

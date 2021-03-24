@@ -11,12 +11,12 @@ router.get('/', function (req, res) {
 	res.render('customers', { layout: 'app.hbs' });
 });
 
-//post customer route to add customer
+//post customer route to add customer to database
 router.post('/', (req, res) => {
-	const item = req.body;
+	const customer = req.body.customer;
 
-	console.log('Adding new item: ', item);
-	db.customers.save(item);
+	console.log('Adding new item: ', customer);
+	db.customers.save(customer);
 });
 
 //get computers route with id parameter from customer
