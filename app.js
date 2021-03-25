@@ -62,5 +62,7 @@ app.use('/customers', customers);
 //listen to connection on port 3000
 app.listen(port, () => {
 	console.log(`Gandalf is live at http://localhost:${port}, baby!`);
-	open('http://localhost:3000');
+
+	//open default browser windows at app-startup
+	//open('http://localhost:3000');
 });
