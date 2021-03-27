@@ -1,101 +1,78 @@
-const axios = require("axios");
-
 class CustomerTable {
-  constructor() {
-    //el property references div-element in html
-    this.el = document.getElementById("customer-table");
+	//constructor gets called at class initiation
+	constructor() {
+		//el property references div-element in html
+		this.el = document.getElementById('customer-table');
 
-    // create state property on initializing with mockdata to populate table
-    this.state = {
-      customers: [],
+		//empty array for customer objects
+		this.customers = [];
 
-      mockData: [
-        {
-          id: 1,
-          name: "netivity GmbH",
-          clients: [
-            { hostname: "thomascln01", ipAddress: "192.168.1.21" },
-            { hostname: "thomascln02", ipAddress: "192.168.1.22" },
-            { hostname: "thomascln03", ipAddress: "192.168.1.23" }
-          ]
-        },
-        {
-          id: 2,
-          name: "TEKO Olten",
-          clients: [
-            { hostname: "lisicln01", ipAddress: "192.168.2.21" },
-            { hostname: "lisicln02", ipAddress: "192.168.2.22" }
-          ]
-        },
-        {
-          id: 3,
-          name: "redIT",
-          clients: [
-            { hostname: "retocln01", ipAddress: "192.168.3.21" },
-            { hostname: "retocln01", ipAddress: "192.168.3.22" }
-          ]
-        }
-      ]
-    };
+		//call fetchCustomers at class initiation
+		this.fetchCustomers();
+	}
 
-    //run render function on class initialization
-    this.render();
-  }
+	//fetches customers from express endpoint
+	async fetchCustomers() {
+		await fetch('/api/customers')
+			.then((res) => res.json())
+			.then((data) => (this.customers = data));
 
-  render() {
-    this.generateTableHeader();
-    //empty tableBody everytime the function gets called
-    this.tableBody.innerHTML = "";
+		this.render();
+	}
 
-    this.state.customers.forEach((item) => {
-      this.generateTableBody(item);
-    });
-  }
+	//write html dom elements from fetched data
+	render() {
+		this.generateTableHeader();
 
-  generateTableHeader() {
-    this.table = document.createElement("table");
-    this.tableHeader = document.createElement("thead");
-    this.tableHeadRow = document.createElement("tr");
-    this.nameHeaderCol = document.createElement("th");
-    this.counterHeaderCol = document.createElement("th");
-    this.tableBody = document.createElement("tbody");
+		//empty tableBody everytime the function gets called
+		this.tableBody.innerHTML = '';
 
-    this.nameHeaderCol.innerText = "Name";
-    this.counterHeaderCol.innerText = "Anzahl Geräte";
+		//create table row for every customer inside customers-array
+		this.customers.forEach((item) => {
+			this.generateTableBody(item);
+		});
+	}
 
-    this.el.appendChild(this.table);
-    this.table.append(this.tableHeader, this.tableBody);
+	//create static table header
+	generateTableHeader() {
+		this.table = document.createElement('table');
+		this.tableHeader = document.createElement('thead');
+		this.tableHeadRow = document.createElement('tr');
+		this.nameHeaderCol = document.createElement('th');
+		this.counterHeaderCol = document.createElement('th');
+		this.tableBody = document.createElement('tbody');
 
-    this.tableHeader.appendChild(this.tableHeadRow);
-    this.tableHeadRow.append(this.nameHeaderCol, this.counterHeaderCol);
-  }
+		this.nameHeaderCol.innerText = 'Name';
+		this.counterHeaderCol.innerText = 'Anzahl Geräte';
 
-  generateTableBody(item) {
-    let customerRow = document.createElement("tr");
-    let customerNameCol = document.createElement("td");
-    let customerLink = document.createElement("a");
-    let customerCounterCol = document.createElement("td");
+		this.el.appendChild(this.table);
+		this.table.append(this.tableHeader, this.tableBody);
 
-    customerLink.innerText = item.name;
-    customerLink.href = `/customers/${item.id}/computers`;
+		this.tableHeader.appendChild(this.tableHeadRow);
+		this.tableHeadRow.append(this.nameHeaderCol, this.counterHeaderCol);
+	}
 
-    customerNameCol.appendChild(customerLink);
-    customerCounterCol.innerText = item.clients.length;
+	//gets customer object as argument and creates a table-row for said object
+	generateTableBody(item) {
+		let customerRow = document.createElement('tr');
+		let customerNameCol = document.createElement('td');
+		let customerLink = document.createElement('a');
+		let customerCounterCol = document.createElement('td');
 
-    customerRow.append(customerNameCol, customerCounterCol);
+		//create dynamic link with customer id
+		customerLink.innerText = item.name;
+		customerLink.href = `/customers/${item.id}/computers`;
 
-    this.tableBody.appendChild(customerRow);
-  }
+		customerNameCol.appendChild(customerLink);
+		customerCounterCol.innerText = item.clients.length;
 
-  async fetchCustomers() {
-    await axios
-      .get("/api/customers")
-      .then((response) => this.setPatients(response.data));
-  }
+		//append generated columns to empty row
+		customerRow.append(customerNameCol, customerCounterCol);
 
-  setPatients(patients) {
-    this.state.customers = patients;
-  }
+		//append generated row to table body
+		this.tableBody.appendChild(customerRow);
+	}
 }
 
+//initiate class
 let customerTable = new CustomerTable();
