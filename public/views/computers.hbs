@@ -5,7 +5,7 @@
 	</nav>
 </header>
 
-<!--i know this is not a nice solution, but had to improvise. Keep in mind that I can't use server side rendering -->
+<!--i know this is not a nice solution, but had to improvise. Keep in mind that I mustn't use server side rendering -->
 <input
 	type="hidden"
 	id="customer-id"
@@ -78,7 +78,10 @@
 	<div id="computer-grid"></div>
 </main>
 
-<!--had to insert script with complete url because of handlebars bug-->
+<!--had to insert script with complete url because of handlebars bug
+ATTENTION this prevents running the site on a different device other than localhost.
+Replace localhost with hostname and you are fine.
+-->
 <script
 	src="http://localhost:3000/assets/js/computers/main.js"
 	type="module"
