@@ -13,6 +13,7 @@
 				name="customer-name"
 				placeholder="netivity GmbH"
 				class="input"
+				required
 			/>
 			<div class="d-flex justify-content-end mt-1">
 				<button type="submit" class="button">Speichern</button>
@@ -29,5 +30,10 @@
 	<div id="customer-table"></div>
 </main>
 
-<script src="./assets/js/customers/main.js" type="module"></script>
-<script src="./assets/js/Modal.js"></script>
+<!--had to insert script with complete url because of handlebars bug-->
+<script
+	src="http://localhost:3000/assets/js/customers/main.js"
+	type="module"
+></script>
+
+<script src="http://localhost:3000/assets/js/Modal.js"></script>
