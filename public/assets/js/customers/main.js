@@ -8,8 +8,8 @@ const URL = '/api/customers';
 const customerTable = new CustomerTable();
 
 //declare variables for form handling
-let customerNameInput = document.getElementById('customer-name-input');
 let createCustomerForm = document.getElementById('create-customer-form');
+let customerNameInput = document.getElementById('customer-name-input');
 
 //fetches customers asynchronously from database and updates table-body
 fetchCustomers().then((customers) => {
@@ -46,7 +46,7 @@ async function storeCustomer(customer) {
 }
 //event handler for customer form creates new customers object and sends it to api-endpoint
 createCustomerForm.addEventListener('submit', (event) => {
-	let newCustomer = { name: customerNameInput.value, clients: [] };
+	const newCustomer = { name: customerNameInput.value, clients: [] };
 
 	storeCustomer(newCustomer);
 
