@@ -1,0 +1,19 @@
+#computer-grid {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(180px, 1fr));
+	gap: 30px;
+	margin-bottom: 15px;
+}
+
+#computer-grid > .computer {
+	padding: 15px;
+	border: 1px solid #aaaaaa;
+	border-radius: 5px;
+}
+
+@media (max-width: 1000px) {
+	#computer-grid {
+		display: flex;
+		flex-direction: column;
+	}
+}
