@@ -6,6 +6,7 @@
 @import 'customers.css';
 @import 'computers.css';
 @import 'contact.css';
+@import 'about.css';
 
 body {
 	height: 100%;
