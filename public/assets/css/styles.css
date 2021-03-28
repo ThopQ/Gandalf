@@ -5,6 +5,7 @@
 @import 'login.css';
 @import 'customers.css';
 @import 'computers.css';
+@import 'contact.css';
 
 body {
 	height: 100%;
@@ -88,6 +89,10 @@ body {
 	display: inline-block;
 	font-size: 14px;
 	cursor: pointer;
+}
+
+i {
+	color: #fa233b;
 }
 
 .link {

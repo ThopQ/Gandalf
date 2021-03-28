@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!--FontAwesome Icons-->
+		<script
+			src="https://kit.fontawesome.com/7460c9bf35.js"
+			crossorigin="anonymous"
+		></script>
+
+		<link rel="stylesheet" href="./assets/css/styles.css" />
+		<title>Kontakt</title>
+	</head>
+	<body>
+		<div class="container">
+			<h1>
+				<a href="/"><i class="fal fa-arrow-alt-left"></i></a>
+				Kontakt
+			</h1>
+
+			<main>
+				<form>
+					<fieldset>
+						<legend>Erfasse dein Ticket</legend>
+						<div class="contact-form">
+							<div class="firstname">
+								<label for="firstname">Vorname</label><br />
+								<input
+									id="firstname"
+									class="input"
+									type="text"
+									placeholder="Max"
+								/>
+							</div>
+
+							<div class="lastname">
+								<label for="lastname">Nachname</label>
+								<input
+									id="lastname"
+									class="input"
+									type="text"
+									placeholder="Muster"
+								/>
+							</div>
+
+							<div class="email">
+								<label for="email">Email-Adresse</label>
+								<input
+									id="email"
+									class="input"
+									type="text"
+									placeholder="max@muster.ch"
+								/>
+							</div>
+
+							<div class="phone">
+								<label for="phone">Telefonnummer</label>
+								<input
+									id="phone"
+									class="input"
+									type="text"
+									placeholder="+41 79 123 45 67"
+								/>
+							</div>
+
+							<div class="message">
+								<label for="message">Nachricht</label>
+								<textarea
+									id="message"
+									class="input"
+									rows="4"
+									placeholder="Nachricht eingeben..."
+								></textarea>
+							</div>
+						</div>
+						<div class="d-flex justify-content-end">
+							<button type="submit" class="button">Senden</button>
+						</div>
+					</fieldset>
+				</form>
+			</main>
+		</div>
+	</body>
+</html>
