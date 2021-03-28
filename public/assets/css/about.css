@@ -1,0 +1,39 @@
+.about-container {
+	display: grid;
+	grid-template-columns: minmax(50px, 250px) 1fr;
+	grid-template-rows: auto;
+	grid-gap: 40px;
+	padding: 10px;
+}
+
+.thomas-iseli {
+	grid-column: 1 / 2;
+	grid-row: 1 / 1;
+}
+.dario-eng {
+	grid-column: 1 / 2;
+	grid-row: 2 / 2;
+}
+
+.thomas-iseli-text {
+	grid-column: 2 / 2;
+	grid-row: 1 / 1;
+}
+
+.dario-eng-text {
+	grid-column: 2 / 2;
+	grid-row: 2 / 2;
+}
+
+.avatar {
+	width: 100%;
+	max-width: 300px;
+	height: auto;
+}
+
+@media (max-width: 600px) {
+	.about-container {
+		display: flex;
+		flex-direction: column;
+	}
+}

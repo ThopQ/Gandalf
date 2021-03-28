@@ -1,0 +1,38 @@
+.contact-form {
+	display: grid;
+	grid-template-areas:
+		'firstname firstname firstname lastname lastname lastname'
+		'email email email email right right'
+		'phone phone phone phone right right'
+		'message message message message message message';
+	gap: 10px;
+	padding: 10px;
+}
+@media (max-width: 600px) {
+	.contact-form {
+		display: grid;
+		grid-template-areas:
+			'firstname firstname firstname firstname firstname firstname'
+			'lastname lastname lastname lastname lastname lastname'
+			'email email email email email email'
+			'phone phone phone phone phone phone'
+			'message message message message message message';
+		gap: 10px;
+		padding: 10px;
+	}
+}
+.firstname {
+	grid-area: firstname;
+}
+.lastname {
+	grid-area: lastname;
+}
+.email {
+	grid-area: email;
+}
+.phone {
+	grid-area: phone;
+}
+.message {
+	grid-area: message;
+}
