@@ -1,29 +1,18 @@
-class CustomerTable {
+export default class CustomerTable {
 	//constructor gets called at class initiation
 	constructor() {
 		//el property references div-element in html
 		this.el = document.getElementById('customer-table');
 
-		//empty array for customer objects
+		//empty customers-collection at class initiation
 		this.customers = [];
 
 		//call fetchCustomers at class initiation
-		this.fetchCustomers();
-	}
-
-	//fetches customers from express endpoint
-	async fetchCustomers() {
-		await fetch('/api/customers')
-			.then((res) => res.json())
-			.then((data) => (this.customers = data));
-
-		this.render();
+		this.generateTableHeader();
 	}
 
 	//write html dom elements from fetched data
 	render() {
-		this.generateTableHeader();
-
 		//empty tableBody everytime the function gets called
 		this.tableBody.innerHTML = '';
 
@@ -31,6 +20,11 @@ class CustomerTable {
 		this.customers.forEach((item) => {
 			this.generateTableBody(item);
 		});
+	}
+
+	updateBody(collection) {
+		this.customers = collection;
+		this.render();
 	}
 
 	//create static table header
@@ -61,7 +55,7 @@ class CustomerTable {
 
 		//create dynamic link with customer id
 		customerLink.innerText = item.name;
-		customerLink.href = `/customers/${item.id}/computers`;
+		customerLink.href = `/customers/${item._id}/computers`;
 
 		customerNameCol.appendChild(customerLink);
 		customerCounterCol.innerText = item.clients.length;
@@ -73,6 +67,3 @@ class CustomerTable {
 		this.tableBody.appendChild(customerRow);
 	}
 }
-
-//initiate class
-let customerTable = new CustomerTable();
