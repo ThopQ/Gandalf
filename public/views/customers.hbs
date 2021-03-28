@@ -1,48 +1,39 @@
 <h1>Kundenliste</h1>
-<div id="add-customer-modal" class="modal">
-	<!-- Modal content -->
-	<div class="modal-content">
-		<span class="close">&times;</span>
-		<h2>Kunde hinzufügen</h2>
 
-		<label for="customer-name-input">Kundenname</label>
-		<input
-			type="text"
-			id="customer-name-input"
-			name="customer-name"
-			placeholder="netivity GmbH"
-			class="input"
-		/>
-		<div class="d-flex justify-content-end mt-1">
-			<button class="button">Speichern</button>
-		</div>
+<div class="modal">
+	<div class="modal-content">
+		<span class="modal-closer">&times;</span>
+
+		<h2>Kunde hinzufügen</h2>
+		<form id="create-customer-form">
+			<label for="customer-name-input">Kundenname</label>
+			<input
+				type="text"
+				id="customer-name-input"
+				name="customer-name"
+				placeholder="netivity GmbH"
+				class="input"
+				required
+			/>
+			<div class="d-flex justify-content-end mt-1">
+				<button type="submit" class="button">Speichern</button>
+			</div>
+		</form>
 	</div>
 </div>
 
 <main>
 	<div class="mt-5 mb-1 table-actions d-flex justify-content-end">
-		<button id="add-customer-btn" class="button">Kunde hinzufügen</button>
+		<button class="button modal-opener">Kunde hinzufügen</button>
 	</div>
+
 	<div id="customer-table"></div>
 </main>
-<script src="./assets/js/CustomerTable.js"></script>
 
-<script>
-	let modal = document.getElementById('add-customer-modal');
-	let openBtn = document.getElementById('add-customer-btn');
-	let closeBtn = document.getElementsByClassName('close')[0];
+<!--had to insert script with complete url because of handlebars bug-->
+<script
+	src="http://localhost:3000/assets/js/customers/main.js"
+	type="module"
+></script>
 
-	openBtn.onclick = function () {
-		modal.style.display = 'block';
-	};
-
-	closeBtn.onclick = function () {
-		modal.style.display = 'none';
-	};
-
-	window.onclick = function (event) {
-		if (event.target == modal) {
-			modal.style.display = 'none';
-		}
-	};
-</script>
+<script src="http://localhost:3000/assets/js/Modal.js"></script>

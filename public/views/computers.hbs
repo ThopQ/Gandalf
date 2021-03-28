@@ -1,0 +1,82 @@
+<h1>Computerliste</h1>
+
+<!--i know this is not a nice solution, but had to improvise. Keep in mind that I can't use server side rendering -->
+<input
+	type="hidden"
+	id="customer-id"
+	name="customerId"
+	value="{{ customerId }}"
+/>
+
+<div class="modal">
+	<div class="modal-content">
+		<span class="modal-closer">&times;</span>
+
+		<h2>Computer hinzufügen</h2>
+		<form id="create-computer-form">
+			<label for="hostname-input">Hostname</label>
+			<input
+				type="text"
+				id="hostname-input"
+				name="hostname"
+				placeholder="tekocln01"
+				class="input"
+			/>
+
+			<label for="ip-address-input">IP-Adresse</label>
+			<input
+				type="text"
+				id="ip-address-input"
+				name="ipAddress"
+				placeholder="192.168.1.101"
+				class="input"
+			/>
+
+			<label for="mac-address-input">MAC-Adresse</label>
+			<input
+				type="text"
+				id="mac-address-input"
+				name="macAddress"
+				placeholder="00:1B:44:11:3A:B7"
+				class="input"
+			/>
+
+			<label for="model-input">Modell</label>
+			<input
+				type="text"
+				id="model-input"
+				name="model"
+				placeholder="DELL Latitude 5020"
+				class="input"
+			/>
+
+			<label for="serialnumber-input">Seriennummer</label>
+			<input
+				type="text"
+				id="serialnumber-input"
+				name="serialnumber"
+				placeholder="CN247BE"
+				class="input"
+			/>
+			<div class="d-flex justify-content-end mt-1">
+				<button type="submit" class="button">Speichern</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+<main>
+	<div class="mt-5 mb-1 table-actions d-flex justify-content-end">
+		<button class="button modal-opener">Computer hinzufügen</button>
+	</div>
+
+	<div id="computer-grid"></div>
+</main>
+
+<!--had to insert script with complete url because of handlebars bug-->
+<script
+	src="http://localhost:3000/assets/js/computers/main.js"
+	type="module"
+></script>
+
+<script src="http://localhost:3000/assets/js/Modal.js"></script>

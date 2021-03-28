@@ -1,51 +1,34 @@
-//const axios = require('axios');
-
-class CustomerTable {
+export default class CustomerTable {
+	//constructor gets called at class initiation
 	constructor() {
-		this.state = {
-			mockData: [
-				{
-					id: 1,
-					name: 'netivity GmbH',
-					clients: [
-						{ hostname: 'thomascln01', ipAddress: '192.168.1.21' },
-						{ hostname: 'thomascln02', ipAddress: '192.168.1.22' },
-						{ hostname: 'thomascln03', ipAddress: '192.168.1.23' },
-					],
-				},
-				{
-					id: 2,
-					name: 'TEKO Olten',
-					clients: [
-						{ hostname: 'lisicln01', ipAddress: '192.168.2.21' },
-						{ hostname: 'lisicln02', ipAddress: '192.168.2.22' },
-					],
-				},
-				{
-					id: 3,
-					name: 'redIT',
-					clients: [
-						{ hostname: 'retocln01', ipAddress: '192.168.3.21' },
-						{ hostname: 'retocln01', ipAddress: '192.168.3.22' },
-					],
-				},
-			],
-		};
+		//el property references div-element in html
+		this.el = document.getElementById('customer-table');
 
-		this.render();
+		//empty customers-collection at class initiation
+		this.customers = [];
+
+		//call fetchCustomers at class initiation
+		this.generateTableHeader();
 	}
 
+	//write html dom elements from fetched data
 	render() {
-		this.generateTableHeader();
+		//empty tableBody everytime the function gets called
 		this.tableBody.innerHTML = '';
 
-		this.state.mockData.forEach((item) => {
+		//create table row for every customer inside customers-array
+		this.customers.forEach((item) => {
 			this.generateTableBody(item);
 		});
 	}
 
+	updateBody(collection) {
+		this.customers = collection;
+		this.render();
+	}
+
+	//create static table header
 	generateTableHeader() {
-		this.el = document.getElementById('customer-table');
 		this.table = document.createElement('table');
 		this.tableHeader = document.createElement('thead');
 		this.tableHeadRow = document.createElement('tr');
@@ -63,22 +46,24 @@ class CustomerTable {
 		this.tableHeadRow.append(this.nameHeaderCol, this.counterHeaderCol);
 	}
 
+	//gets customer object as argument and creates a table-row for said object
 	generateTableBody(item) {
 		let customerRow = document.createElement('tr');
 		let customerNameCol = document.createElement('td');
 		let customerLink = document.createElement('a');
 		let customerCounterCol = document.createElement('td');
 
+		//create dynamic link with customer id
 		customerLink.innerText = item.name;
-		customerLink.href = `/customers/${item.id}/computers`;
+		customerLink.href = `/customers/${item._id}/computers`;
 
 		customerNameCol.appendChild(customerLink);
 		customerCounterCol.innerText = item.clients.length;
 
+		//append generated columns to empty row
 		customerRow.append(customerNameCol, customerCounterCol);
 
+		//append generated row to table body
 		this.tableBody.appendChild(customerRow);
 	}
 }
-
-let customerTable = new CustomerTable();
