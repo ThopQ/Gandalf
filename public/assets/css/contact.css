@@ -5,7 +5,7 @@
 		'email email email email right right'
 		'phone phone phone phone right right'
 		'message message message message message message';
-	grid-gap: 10px;
+	gap: 10px;
 	padding: 10px;
 }
 @media (max-width: 600px) {
@@ -17,7 +17,7 @@
 			'email email email email email email'
 			'phone phone phone phone phone phone'
 			'message message message message message message';
-		grid-gap: 10px;
+		gap: 10px;
 		padding: 10px;
 	}
 }
