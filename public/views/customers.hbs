@@ -1,7 +1,9 @@
-<h1>
-	<a href="/"><i class="fal fa-arrow-alt-left"></i></a>
-	Kundenliste
-</h1>
+<header>
+	<nav class="d-flex justify-content-start align-items-center">
+		<a href="/"><i class="fal fa-2x fa-arrow-alt-left"></i></a>
+		<h1 class="ml-2">Kundenliste</h1>
+	</nav>
+</header>
 
 <div class="modal">
 	<div class="modal-content">
@@ -33,7 +35,10 @@
 	<div id="customer-table"></div>
 </main>
 
-<!--had to insert script with complete url because of handlebars bug-->
+<!--had to insert script with complete url because of handlebars bug
+ATTENTION this prevents running the site on a different device other than localhost.
+Replace localhost with hostname and you are fine.
+-->
 <script
 	src="http://localhost:3000/assets/js/customers/main.js"
 	type="module"
