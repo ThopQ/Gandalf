@@ -34,6 +34,11 @@ nav > ul {
 	list-style-type: none;
 }
 
+i {
+	color: #fa233b;
+	cursor: pointer;
+}
+
 .container {
 	margin-left: 3rem;
 	margin-right: 3rem;
@@ -131,10 +136,6 @@ nav > ul {
 	display: inline-block;
 	font-size: 1.2rem;
 	cursor: pointer;
-}
-
-i {
-	color: #fa233b;
 }
 
 .link {
